@@ -4,24 +4,25 @@ import { StyleSheet, Text, View, TextInput } from 'react-native';
 import makerjs from 'makerjs';
 
 export default function App() {
-  const [l, onChangeL] = useState();
-  const [w, onChangeW] = useState();
-  const [h, onChangeH] = useState();
+  const [l, setL] = useState('');
+  const [w, setW] = useState('');
+  const [h, setH] = useState('');
+
   return (
     <View style={styles.container}>
       <TextInput
         inputMode="numeric"
-        onChangeText={onChangeL}
+        onChangeText={setL}
         value={l}
       />
       <TextInput
         inputMode="numeric"
-        onChangeText={onChangeW}
+        onChangeText={setW}
         value={w}
       />
       <TextInput
         inputMode="numeric"
-        onChangeText={onChangeL}
+        onChangeText={setH}
         value={h}
       />
       <StatusBar style="auto" />
