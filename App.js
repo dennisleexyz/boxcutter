@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
+import parse from 'html-react-parser';
 import makerjs from 'makerjs';
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
         onChangeText={setH}
         value={h}
       />
+      {parse(makerjs.exporter.toSVG(new box(2, 3, 1)))}
       <StatusBar style="auto" />
     </View>
   );
