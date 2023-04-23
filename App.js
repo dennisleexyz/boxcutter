@@ -15,18 +15,22 @@ export default function App() {
         inputMode="numeric"
         onChangeText={setL}
         value={l}
+        placeholder = "Enter Length"
       />
       <TextInput
         inputMode="numeric"
         onChangeText={setW}
         value={w}
+        placeholder = "Enter Width"
       />
       <TextInput
         inputMode="numeric"
         onChangeText={setH}
         value={h}
+        placeholder = "Enter Height"
       />
-      {parse(makerjs.exporter.toSVG(new box(2, 3, 1)))}
+    
+      {parse(makerjs.exporter.toSVG(new box(parseFloat(l), parseFloat(w), parseFloat(h))))}
       <StatusBar style="auto" />
     </View>
   );
@@ -41,7 +45,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function box(l, w, h) {
+function box( l, w, h) {
   this.units = makerjs.unitType.Inch;
 
   var paths = [];
